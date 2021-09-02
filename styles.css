@@ -267,3 +267,186 @@ nav {
     transform: scale(1);
     opacity: 1;
   }
+
+  .project {
+      margin-bottom: 135px;
+  }
+  .project:last-child {
+      margin-bottom: 40px;
+  }
+
+  .project_img {
+      width: 100%;
+      transition: all 500ms ease;
+  }
+
+  .project_wrapper {
+      display: flex;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, .45);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+  }
+  .project_wrapper:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #1c1d25;
+      opacity: 0;
+      transition: all 450ms ease;
+      z-index: 2;
+      transform: translateY(100%);
+  }
+  .project:hover .project_wrapper:before {
+      transform: translateY(0);
+      opacity: .7;
+  }
+.project:hover .project_img {
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+.project:hover .project_description {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.project_list {
+    padding-top: 40px;
+}
+
+.project_description {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+.project_description-para {
+    margin: 16px 0;
+}
+.project_description-link {
+    font-size: 20px;
+    margin-right: 16px;
+}
+.project_description-title,
+.project_description-sub-title,
+.project_description-para,
+.project_description-link {
+    text-align: left;
+    color: #fff;
+}
+
+.footer_social-list {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 28px;
+}
+.footer_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8% 0;
+}
+
+.footer_logo-img {
+    width: 70px;
+    height: 70px;
+}
+
+.footer_social-link,
+.footer_copyright,
+.footer_logo-popper {
+    color: #fff;
+}
+
+.footer_logo-popper {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.footer_anchor {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer_anchor:hover .footer_logo-popper {
+    transform: translateX(60px);
+    opacity: 1;
+}
+
+/* Small Phones, tablets, large smartphones */
+
+@media (max-width: 768px) {
+    nav {
+        height: 68px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+
+    .about-me_info-para {
+        font-size: 18px;
+    }
+
+    .language {
+        width: calc(100% / 3);
+    }
+
+    .project_description-para {
+        font-size: 14px;
+    }
+    .project_description {
+        left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+    .nav_link:not(:last-child) {
+        display: none;
+    }
+
+    .project_wrapper {
+        border-radius: 0;
+    }
+
+    .project_description {
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+    .project_description-para {
+        display: none;
+    }
+    .project_description-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .project_description-title {
+        font-size: 32px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .project_description-sub-title {
+        text-align: center;
+        margin: 12px 0;
+    }
+}
